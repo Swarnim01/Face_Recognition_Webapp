@@ -42,6 +42,7 @@ app.post('/signin' , (req,res)=>{
 })
 app.post('/register', (req,res)=>{
     const {email ,name , password} = req.body; 
+    console.log(email,name);
     if(!email||!name||!password){
         return res.status(400).json('incorrect form submission')
     }
@@ -86,6 +87,11 @@ app.put('/image', (req,res) =>{
     .catch(err => res.status(400).json('unable to access entries'))
     })
 
+
+if(process.env.NODE_ENV === "production")
+{
+    app.use(express.static('client/build'))
+}
 app.listen(process.env.PORT || 3000, ()=>{
     console.log(`app is running in port ${process.env.PORT}`);
 })
