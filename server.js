@@ -13,7 +13,7 @@ const db = knex({
     }
 });
 
-
+// postgres://sqyegznnvndzan:a4f58b00f1eea65bf78d8ef0b8f6376618e8e16782168a127c5ea2e24ca47d85@ec2-54-235-192-146.compute-1.amazonaws.com:5432/d1bkj72inmg92r
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
